@@ -81,16 +81,16 @@ In this book, we will present the following EventToEventComposition patterns:
    it uses the state from this collection of event in its event composition.
    The chapter uses a `long-press` event as its example.
 
-   1. triple-click. Illustrate how state for the event is stored and then used in the filter and 
+   1. `triple-click`. Illustrate how state for the event is stored and then used in the filter and 
       makeEvent phases.
       
-   2. naive mouse dragging. Illustrate how additional trigger functions are added once the start of a
+   2. `naive mouse dragging`. Illustrate how additional trigger functions are added once the start of a
       sequence has occurred. Discuss the performance of global trigger functions, and how best to keep 
       things efficient.
       
-   3. setTargetCapture, ie. use the start of the event as the target for the later composed events in the sequence.
+   3. `setTargetCapture`, ie. use the start of the event as the target for the later composed events in the sequence.
 
-   4. setEventTypeCapture, ie. use the replaceDefaultAction pattern + add css properties such as
+   4. `setEventTypeCapture`, ie. use the replaceDefaultAction pattern + add css properties such as
       touch-action and user-select.
       
 Discuss how it is important not to have the trigger event listeners on high frequent events, and 
@@ -100,7 +100,7 @@ to add event trigger functions on a need-to-know basis.
    Question 3: What state information should composed events rely on?
 Furthermore, and as a general rule, composed events should not require any state information 
 outside the scope of its triggering event and the DOM elements it directly propagates to.
-However, there is one exception to this rule: `<base href="" target="">` and the EventHelper pattern.
+However, there is one exception to this rule: `<base href="" target="">` and the **EventHelper** pattern.
 But, this pattern is confusing, hard to decipher, and hard to control in a living codebase.
 Thus, my advice is strongly, strive hard to only rely on data from the triggering events itself and
 from the DOM elements the triggering events directly propagates to.
@@ -114,16 +114,16 @@ from the DOM elements the triggering events directly propagates to.
    This opens up both the discussion about what `preventDefault()` is all about, and
    how CSS-properties such as `userSelect` provide a modern alternative to `preventDefault()` 
    to control native, composed events and actions.
-   The chapter extends the `mouse-dragging` example from chapter 5. Name MouseGrab? ref D J Trump?
+   The chapter extends the `mouse-dragging` example from chapter 5. 
 
-11. **CaptureTouch**. This pattern is principally the same as CapturedEventType.
+11. **CaptureTouch**. This pattern is principally the same as `CapturedEventType`.
    However, since touch-based gestures is a mayor player in the composed events game, 
    a separate chapter is devoted to capturering touch events.
    This chapter uses a single-finger `touch-dragging` example, and discuss how the potential 
    and limitations of the `touchAction` CSS-property.
 
 12. **InvadeAndRetreat** and the 5 problem descriptions from the gesture chapter.
-   Behind the CaptureEventType patterns, a more generalized pattern about conflict management. 
+   Behind the `CaptureEventType` patterns, a more generalized pattern about conflict management. 
    Go all in hard at the beginning. 
 
 
