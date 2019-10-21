@@ -51,6 +51,8 @@
 <sound-strip sound="sine(random([C4, E4, G4]))"></sound-strip>
 <sound-strip sound="sine(circle5(F4,1))"></sound-strip>
 <sound-strip sound="sawtooth(random([C2, E2, G2])) > gain([1/0.0015, 0/1.2]) > lowpass(244.5hz) > gain([1.0/0.001, 0/0.8])"></sound-strip>
+<sound-strip sound='lfo(400, 600, 2hz, "sine")'></sound-strip>
+<sound-strip sound='lfo(500, 800, 5hz, "saswooth")'></sound-strip>
 
 <!--
 1. fix the parser
